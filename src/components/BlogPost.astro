@@ -1,0 +1,41 @@
+---
+// src/components/BlogPost.astro
+const { post } = Astro.props;
+---
+
+<article
+    id={`post-${post.id}`}
+    class="et_pb_post clearfix et_pb_blog_item_0_0 post type-post status-publish format-standard has-post-thumbnail hentry category-category"
+>
+    <div class="et_pb_image_container">
+        <a href={post.url} class="entry-featured-image-url">
+            <img
+                src={post.image}
+                alt={post.title}
+                width="400"
+                height="250"
+                decoding="async"
+                fetchpriority="high"
+                sizes="(max-width:479px) 479px, 100vw"
+                srcset={`${post.image} 480w`}
+            />
+        </a>
+    </div>
+    <h2 class="entry-title">
+        <a href={post.url}>{post.title}</a>
+    </h2>
+    <p class="post-meta">
+        by <span class="author vcard"
+            ><a href={post.authorUrl} rel="author">{post.author}</a></span
+        > |
+        <span class="published">{post.date}</span> |
+        <a href={post.categoryUrl} rel="tag">{post.category}</a> | {
+            post.comments
+        } Comments
+    </p>
+    <div class="post-content">
+        <div class="post-content-inner">
+            <p>{post.excerpt}</p>
+        </div>
+    </div>
+</article>

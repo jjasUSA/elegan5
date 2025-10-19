@@ -1,0 +1,52 @@
+.my-story {
+    padding: 2rem;
+    font-family: system-ui, sans-serif;
+}
+
+.my-story h1,
+.my-story h2 {
+    text-align: center;
+}
+
+.portfolio h2 {
+    text-align: center;
+}
+
+/* h2 {
+    text-align: center;
+} */
+
+.counters {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.counters li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.portfolio-items a {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.portfolio-items a:hover {
+    transform: scale(1.03);
+    background-color: #fafafa;
+}

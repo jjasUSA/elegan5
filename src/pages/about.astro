@@ -1,0 +1,49 @@
+---
+import MyStory from "../components/MyStory.astro";
+import Main from "../components/Main.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Desestructuración con valores por defecto desde Astro.props
+const {
+  nombre = "About Me",
+  subtitle = "Your Subtitle Goes Here",
+  texto = `Bienvenido a la página About Me.`,
+  showSlider = false,
+} = Astro.props;
+
+// Título generado dinámicamente
+const titulo = `Simple ${nombre} Page Live Demo`;
+---
+
+<!-- <TemplatePage 
+  nombre="About Me"
+  subtitle="Acerca de mí"
+  texto="Aquí te cuento sobre mi experiencia y proyectos." 
+/> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <Header titulo={titulo} currentPage={nombre} />
+    <!-- <Main subtitle={nombre} {subtitle} texto={texto} nombre={nombre} /> -->
+    <Main
+      subtitle={nombre}
+      texto={texto}
+      nombre={nombre}
+      class="main-section"
+    />
+
+    <MyStory />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .main-section {
+    text-align: left;
+    margin-left: 20px;
+  }
+</style>

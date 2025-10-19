@@ -1,0 +1,30 @@
+---
+import Header from "../components/Header.astro";
+// import Main from "../components/Main.astro";
+import Footer from "../components/Footer.astro";
+import Slider from "../components/Slider.astro";
+
+const {
+  nombre = "Home",
+  subtitle = "Your Subtitle Goes Here",
+  texto = "Bienvenido a la página principal.",
+  showSlider = false, // asegúrate de que tenga valor por defecto
+} = Astro.props;
+
+const titulo = `Simple ${nombre} Page Live Demo`;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{nombre}</title>
+  </head>
+  <body>
+    <Header titulo={titulo} currentPage={nombre} />
+    <!-- <Main subtitle={subtitle} texto={texto} nombre={nombre} /> -->
+
+    <!-- Slider solo si showSlider es true -->
+    {showSlider && <Slider />}
+    <Footer />
+  </body>
+</html>

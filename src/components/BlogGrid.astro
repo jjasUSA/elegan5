@@ -1,0 +1,43 @@
+---
+// src/components/BlogGrid.astro
+import BlogPost from "./BlogPost.astro";
+import type { Post } from "../types";
+
+interface BlogGridProps {
+    posts: Post[];
+}
+
+const { posts } = Astro.props as BlogGridProps;
+---
+
+<div
+    class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular"
+>
+    <div class="et_pb_row et_pb_row_0">
+        <div
+            class="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child"
+        >
+            <div
+                class="et_pb_module et_pb_blog_0 et_pb_blog_grid_wrapper et_pb_bg_layout_light"
+            >
+                <div class="et_pb_blog_grid clearfix">
+                    <div class="et_pb_ajax_pagination_container">
+                        <div class="et_pb_salvattore_content" data-columns>
+                            {
+                                posts.map((singlePost: Post) => (
+                                    <BlogPost post={singlePost} />
+                                ))
+                            }
+                        </div>
+                        <div>
+                            <div class="pagination clearfix">
+                                <div class="alignleft"></div>
+                                <div class="alignright"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

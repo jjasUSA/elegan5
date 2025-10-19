@@ -1,0 +1,141 @@
+---
+const { titulo, currentPage } = Astro.props;
+
+// Lista de todas tus páginas (puedes cambiar los nombres y rutas)
+const paginas = [
+    { nombre: "Home", ruta: "/" },
+    { nombre: "About Me", ruta: "/about" },
+    { nombre: "About Us", ruta: "/aboutus" },
+    { nombre: "Blog", ruta: "/blog" },
+    { nombre: "Contact Us", ruta: "/contact" },
+    { nombre: "Portfolio", ruta: "/portfolio" },
+    { nombre: "Project", ruta: "/project" },
+
+    {
+        nombre: "Basic Layouts",
+        ruta: "/basics",
+        subpaginas: [
+            { nombre: "Full Width", ruta: "/sub/fullwidth" },
+            { nombre: "Right Sidebar", ruta: "/sub/rightSidebar" },
+            { nombre: "Left Sidebar", ruta: "/sub/leftSidebar" },
+            { nombre: "Dual Sidebar", ruta: "/sub/dualSidebar" },
+        ],
+    },
+
+    { nombre: "Sales", ruta: "/sales" },
+    { nombre: "Shop", ruta: "/shop" },
+    { nombre: "Maintenance Mode", ruta: "/maintenance" },
+    { nombre: "Coming Soon", ruta: "/coming" },
+    // { nombre: "Cart", ruta: "/cart" },
+    { nombre: "\u{1F6D2}", ruta: "/cart" },
+];
+---
+
+<!-- 
+Home 
+About Me
+About Us
+Blog 
+Contact Us
+Portfolio
+Project
+Basic Layouts
+Sales
+Shop
+Maintenance Mode
+Coming Soon
+Cart 
+-->
+<header
+    style="background:white; color:black; margin:0; padding:0 0 0 2rem; gap:1rem;"
+>
+    <h1>{titulo}</h1>
+    <nav
+        style="background:white; color:black; margin:0; padding:0 0 0 2rem; gap:1rem;"
+    >
+        <ul
+            style="display:flex; list-style:none; margin:0; padding:0; gap:1rem; white-space:nowrap;"
+        >
+            {
+                paginas.map((pagina) => (
+                    <li style="position:relative;">
+                        <a
+                            href={pagina.ruta}
+                            class={`nav-link ${pagina.nombre === currentPage ? "active" : ""}`}
+                        >
+                            {pagina.nombre}
+                        </a>
+
+                        {pagina.subpaginas && (
+                            <ul class="submenu">
+                                {pagina.subpaginas.map((sub) => (
+                                    <li>
+                                        <a href={sub.ruta} class="submenu-link">
+                                            {sub.nombre}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
+
+<style>
+    /* Estilos generales */
+    .nav-link {
+        display: inline-block;
+        color: black;
+        text-decoration: none;
+        padding: 0.5rem 0.8rem;
+        transition:
+            color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: grey;
+        transform: scale(1.1);
+    }
+
+    /* Submenú */
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        /* text-decoration: none; */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        min-width: 180px;
+        z-index: 9999;
+    }
+
+    .submenu-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: black;
+        text-decoration: none;
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .submenu-link:hover {
+        background: #f0f0f0;
+        color: blue;
+    }
+
+    /* Mostrar submenú al pasar el ratón */
+    li:hover > .submenu {
+        display: flex;
+    }
+</style>

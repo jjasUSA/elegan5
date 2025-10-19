@@ -1,0 +1,29 @@
+---
+const { subtitle, texto, nombre } = Astro.props;
+---
+
+<!-- <main style="padding:2rem; text-align:center;"> -->
+<main>
+    <h2>{subtitle}</h2>
+    <p>{texto}</p>
+    <p>Esta es la página "{nombre}" creada con Astro.</p>
+</main>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    main {
+        padding: 2rem 2rem 2rem 8rem; /* padding-top/right/bottom/left */
+        text-align: left; /* texto alineado a la izquierda */
+        background-color: #2E84F3;
+        color: white;
+        width: 100%; /* ocupa todo el ancho de la pantalla */
+        min-height: 150px;
+        display: block; /* sin flex */
+    }
+</style>

@@ -1,0 +1,33 @@
+---
+import TemplatePage from '../layouts/TemplatePage.astro';
+import Layout from "../layouts/contruct.astro";
+---
+
+<TemplatePage 
+  nombre="Cart"
+  subtitle="Tu carrito"
+  texto="Aquí puedes ver los productos que has añadido." 
+/>
+
+<!--  -->
+
+<Layout title="En fabricación">
+    <div style="text-align:center;">
+        <div style="font-size:4rem; animation: spin 2s linear infinite;">
+            ⚙️
+        </div>
+        <h1>En fabricación</h1>
+        <p>Estamos trabajando en esta sección...</p>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</Layout>

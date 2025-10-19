@@ -1,0 +1,31 @@
+---
+const { currentPage } = Astro.props;
+---
+
+<nav style="text-align:center; padding:0.5rem;">
+    <a
+        href="/"
+        style={`margin:0 1rem; ${currentPage === "Home" ? "font-weight:bold; color:blue;" : "color:black;"}`}
+        >Home</a
+    >
+    <a
+        href="/about"
+        style={`margin:0 1rem; ${currentPage === "About Me" ? "font-weight:bold; color:blue;" : "color:black;"}`}
+        >About Me</a
+    >
+    <a
+        href="/contact"
+        style={`margin:0 1rem; ${currentPage === "Contact" ? "font-weight:bold; color:blue;" : "color:black;"}`}
+        >Contact</a
+    >
+    <a
+        href="/blog"
+        style={`margin:0 1rem; ${currentPage === "Blog" ? "font-weight:bold; color:blue;" : "color:black;"}`}
+        >Blog</a
+    >
+    <a
+        href="/sales"
+        style={`margin:0 1rem; ${currentPage === "Sales" ? "font-weight:bold; color:blue;" : "color:black;"}`}
+        >Sales</a
+    >
+</nav>

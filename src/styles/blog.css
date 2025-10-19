@@ -1,0 +1,73 @@
+/* src/styles/blog.css */
+
+/* Contenedor de la grilla */
+.et_pb_salvattore_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 elementos por fila */
+    gap: 20px;
+    /* Espacio entre cards */
+    margin: 20px 0;
+}
+
+/* Card de cada post */
+.et_pb_post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover efecto */
+.et_pb_post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del post */
+.et_pb_image_container img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Título */
+.entry-title {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+.entry-title a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Meta info */
+.post-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0 10px 10px 10px;
+}
+
+/* Extracto */
+.post-content-inner {
+    padding: 0 10px 10px 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsive: 2 cards en tablet */
+@media (max-width: 1024px) {
+    .et_pb_salvattore_content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: 1 card en móvil */
+@media (max-width: 600px) {
+    .et_pb_salvattore_content {
+        grid-template-columns: 1fr;
+    }
+}

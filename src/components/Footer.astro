@@ -1,0 +1,102 @@
+<!-- <footer style="background:#eee; padding:1rem; text-align:center;">
+    <p>© 2025 Page Live Demo</p>
+</footer> -->
+<div id="footer-bottom">
+    <div class="container clearfix">
+        <p id="footer-info">
+            Designed by <a href="https://www.elegantthemes.com" target="_blank"
+                >Elegant Themes</a
+            > | Powered by <a href="https://wordpress.org" target="_blank"
+                >WordPress</a
+            >
+        </p>
+        <ul class="et-social-icons">
+            <li class="et-social-icon et-social-facebook">
+                <a href="https://www.facebook.com" target="_blank" class="icon">
+                    <img src="/icons/facebook.svg" alt="Facebook" />
+                </a>
+            </li>
+            <li class="et-social-icon et-social-twitter">
+                <a href="https://twitter.com" target="_blank" class="icon">
+                    <img src="/icons/x.svg" alt="X" />
+                </a>
+            </li>
+            <li class="et-social-icon et-social-rss">
+                <a
+                    href="https://www.elegantthemes.com/layouts/feed"
+                    target="_blank"
+                    class="icon"
+                >
+                    <img src="/icons/rss.svg" alt="RSS" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    /* Contenedor del footer */
+    #footer-bottom {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Contenedor interno con flex */
+    #footer-bottom .container {
+        display: flex;
+        justify-content: space-between; /* texto a la izquierda, iconos a la derecha */
+        align-items: center;
+        gap: 2rem; /* separación mínima entre texto e iconos */
+    }
+
+    /* Texto del footer */
+    #footer-bottom #footer-info {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* Enlaces del footer */
+    #footer-bottom #footer-info a {
+        color: #1da1f2;
+        text-decoration: none;
+    }
+
+    #footer-bottom #footer-info a:hover {
+        text-decoration: underline;
+    }
+
+    /* Lista de iconos sociales */
+    #footer-bottom .et-social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Cada icono */
+    #footer-bottom .et-social-icons li a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        /* border-radius: 50%; */
+        /* background-color: #555; */
+        transition: all 0.3s ease;
+    }
+
+    #footer-bottom .et-social-icons li a:hover {
+        transform: scale(1.1);
+        background: #1da1f2;
+    }
+
+    /* Imagen de iconos */
+    #footer-bottom .et-social-icons li a img {
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+</style>

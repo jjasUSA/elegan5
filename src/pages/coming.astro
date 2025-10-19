@@ -1,0 +1,259 @@
+---
+import TemplatePage from "../layouts/TemplatePage.astro";
+---
+
+<TemplatePage
+  nombre="Coming Soon"
+  subtitle="Próximamente"
+  texto="Algo nuevo e interesante está por llegar."
+/>
+
+<style>
+  /* Fondo degradado azul */
+  #main-header {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  #et-main-area {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  /* Countdown */
+  .et_pb_countdown_timer_container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .et_pb_countdown_timer_container .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .et_pb_countdown_timer_container .value {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .et_pb_countdown_timer_container .label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Newsletter form */
+  .et_pb_newsletter_description {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .et_pb_newsletter_fields input {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid red;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .et_pb_newsletter_button {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+
+  .et_pb_newsletter_button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* CTA Button */
+  .et_pb_promo_button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 30px;
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  .et_pb_promo_button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .et_pb_countdown_timer_container {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .et_pb_newsletter_fields input {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<header id="main-header">
+  <div id="et-main-area">
+    <div id="main-content">
+      <article
+        class="post-210654 page type-page status-publish has-post-thumbnail hentry"
+      >
+        <div class="entry-content">
+          <div class="et-l et-l--post">
+            <div class="et_builder_inner_content et_pb_gutters3">
+              <!-- Countdown Section -->
+              <div
+                class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular"
+              >
+                <div class="et_pb_row et_pb_row_0">
+                  <div
+                    class="et_pb_column et_pb_column_4_4 et_pb_column_0 et-last-child"
+                  >
+                    <div
+                      class="et_pb_module et_pb_countdown_timer et_pb_countdown_timer_0 et_pb_no_bg et_pb_bg_layout_dark"
+                      data-end-timestamp="1401513300"
+                    >
+                      <div class="et_pb_countdown_timer_container clearfix">
+                        <h4 class="title">This Site Is Coming Soon</h4>
+                      </div>
+                      <div class="et_pb_countdown_timer_container clearfix">
+                        <div
+                          class="days section values"
+                          data-short="Day"
+                          data-full="Day(s)"
+                        >
+                          <p class="value">000</p>
+                          <p class="label">Day(s)</p>
+                        </div>
+                        <div class="sep section"><p>:</p></div>
+                        <div
+                          class="hours section values"
+                          data-short="Hrs"
+                          data-full="Hour(s)"
+                        >
+                          <p class="value">00</p>
+                          <p class="label">Hour(s)</p>
+                        </div>
+                        <div class="sep section"><p>:</p></div>
+                        <div
+                          class="minutes section values"
+                          data-short="Min"
+                          data-full="Minute(s)"
+                        >
+                          <p class="value">00</p>
+                          <p class="label">Minute(s)</p>
+                        </div>
+                        <div class="sep section"><p>:</p></div>
+                        <div
+                          class="seconds section values"
+                          data-short="Sec"
+                          data-full="Second(s)"
+                        >
+                          <p class="value">00</p>
+                          <p class="label">Second(s)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="et_pb_row et_pb_row_1">
+                  <div
+                    class="et_pb_column et_pb_column_4_4 et_pb_column_1 et-last-child"
+                  >
+                    <div
+                      class="et_pb_module et_pb_signup_0 et_pb_newsletter_layout_left_right et_pb_newsletter et_pb_subscribe clearfix et_pb_text_align_left et_pb_bg_layout_dark"
+                    >
+                      <div class="et_pb_newsletter_description">
+                        <h2 class="et_pb_module_header">
+                          Sign Up to Receive Updates
+                        </h2>
+                        <div>
+                          Integer accumsan leo non nisi sollicitudin, sit amet
+                          eleifend dolor mollis. Donec sagittis posuere commodo.
+                          Aenean sed convallis lectus. Vivamus et nisi posuere
+                          erat aliquet adipiscing in non libero. Integer ornare
+                          dui at molestie dictum. Vivamus id aliquam urna. Duis
+                          quis fermentum lacus. Sed viverra dui leo, non auctor
+                          nisi porttitor a. Nunc a tristique lectus.
+                        </div>
+                      </div>
+
+                      <div class="et_pb_newsletter_form">
+                        <form method="post">
+                          <div class="et_pb_newsletter_fields">
+                            <input
+                              id="et_pb_signup_firstname"
+                              type="text"
+                              placeholder="First Name"
+                              name="et_pb_signup_firstname"
+                            />
+                            <input
+                              id="et_pb_signup_lastname"
+                              type="text"
+                              placeholder="Last Name"
+                              name="et_pb_signup_lastname"
+                            />
+                            <input
+                              id="et_pb_signup_email"
+                              type="text"
+                              placeholder="Email"
+                              name="et_pb_signup_email"
+                            />
+                          </div>
+                          <p class="et_pb_newsletter_button_wrap">
+                            <a
+                              class="et_pb_newsletter_button et_pb_button"
+                              href="#">Submit</a
+                            >
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Call to Action Section -->
+                <div class="et_pb_row et_pb_row_2">
+                  <div
+                    class="et_pb_column et_pb_column_4_4 et_pb_column_2 et-last-child"
+                  >
+                    <div
+                      class="et_pb_module et_pb_cta_0 et_pb_promo et_pb_text_align_center et_pb_bg_layout_dark et_pb_no_bg"
+                    >
+                      <div class="et_pb_button_wrapper">
+                        <a class="et_pb_button et_pb_promo_button" href="#"
+                          >Contact Us</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</header>

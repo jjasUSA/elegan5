@@ -1,0 +1,160 @@
+---
+/* Puedes importar estilos aquí o dejarlos globales */
+import "../styles/mystory.css";
+const skills = [
+    { title: "Brand Strategy", value: 80 },
+    { title: "Internet Marketing", value: 60 },
+    { title: "App Development", value: 50 },
+    { title: "Customer Happiness", value: 90 },
+];
+---
+
+<div class="my-story">
+    <section class="intro">
+        <h1>This is My Story</h1>
+        <p>
+            Curabitur quis dui volutpat, cursus eros ut, commodo elit. Cum
+            sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Ut id est euismod, rhoncus nunc quis, lobortis
+            turpis.
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul class="counters">
+            {
+                skills.map((skill) => (
+                    <li class="skill-item">
+                        <span class="title">{skill.title}</span>
+                        <div class="progress-bar">
+                            <div
+                                class="fill"
+                                style={`--value: ${skill.value}%`}
+                            />
+                        </div>
+                        <span class="percent">{skill.value}%</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+</div>
+
+<!-- ---
+/* Puedes importar estilos aquí o dejarlos globales */
+// import "../styles/mystory.css";
+--- -->
+
+<section class="portfolio">
+    <h2>My Recent Work</h2>
+
+    <div class="portfolio-items">
+        <a href="https://www.elegantthemes.com/layouts/project/shadow-inc">
+            <h3>Shadow Inc.</h3>
+            <p>May 20, 2014</p>
+        </a>
+
+        <a href="https://www.elegantthemes.com/layouts/project/airplay">
+            <h3>Airplay</h3>
+            <p>May 20, 2014</p>
+        </a>
+
+        <a href="https://www.elegantthemes.com/layouts/project/umbra-branding">
+            <h3>Umbra Branding</h3>
+            <p>May 20, 2014</p>
+        </a>
+
+        <!-- Puedes seguir añadiendo los demás items igual -->
+    </div>
+</section>
+
+<style>
+    .my-story {
+        padding: 2rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+    }
+
+    .intro {
+        /* text-align: center; */
+        margin-bottom: 3rem;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .skills {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .skills h2 {
+        /* text-align: center; */
+        margin-bottom: 2rem;
+    }
+
+    .counters {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .skill-item {
+        display: flex;
+        /* align-items: center; */
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+    }
+
+    .skill-item .title {
+        width: 40%;
+        font-weight: 600;
+    }
+
+    .progress-bar {
+        position: relative;
+        flex: 1;
+        height: 16px;
+        background: #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background: #007bff;
+        border-radius: 8px;
+        animation: fill-bar 1.8s forwards ease-in-out;
+    }
+
+    .percent {
+        width: 10%;
+        min-width: 40px;
+        text-align: right;
+        font-weight: 600;
+        color: #007bff;
+    }
+
+    /*  */
+    <style > .main-section {
+        text-align: left;
+        margin-left: 20px;
+    }
+    /*  */
+
+    @keyframes fill-bar {
+        from {
+            width: 0;
+        }
+        to {
+            width: var(--value);
+        }
+    }
+</style>

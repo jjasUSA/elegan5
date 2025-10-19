@@ -1,0 +1,22 @@
+---
+import TemplatePage from "../layouts/TemplatePage.astro";
+import { posts } from "../data/posts.js";
+import BlogGrid from "../components/BlogGrid.astro";
+import "../styles/blog.css";
+---
+
+<TemplatePage
+  nombre="Blog"
+  subtitle="Artículos y novedades"
+  texto="Aquí puedes leer nuestros artículos y noticias."
+/>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mi Blog Astro</title>
+  </head>
+  <body>
+    <BlogGrid posts={posts} />
+  </body>
+</html>
